@@ -1,0 +1,568 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    animation: changeColor 10s infinite;
+}
+@keyframes changeColor {
+    0% { background-color: #7D8491; } 
+    25% { background-color: #FF1053; } 
+    50% { background-color: #a5a1d1; } 
+    75% { background-color: #ED474A; } 
+    100% { background-color: #F13030; } 
+}
+#home{
+    padding: 20px;
+}
+#header{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.logo.animate{
+    animation: slideInFromTop 1s ease-out;
+}
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%); /* Move the element up by its own height */
+    }
+    to {
+        transform: translateY(0); /* Move the element back to its original position */
+    }
+}
+
+.logo.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+.menu-bar{
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu-bar::before{
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 2s ease;
+}
+.menu-bar:hover{
+    color:white;
+    font-weight: 500;
+    transition: 0.5s;
+    border: 1px solid #AA7BC3;
+    border-radius: 7px;
+    background-color:#AA7BC3;
+    padding: 4px;
+    transition: 0.5s ease;
+
+}
+.menu-bar:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: white;
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Start with 0 width */
+    }
+    to {
+        width: 100%; /* Move to full width */
+    }
+}
+
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden; /* Hide overflowed text */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    margin: 0; /* Remove default margin to align with other content */
+    animation: typing 5s steps(40) 0s forwards; /* Adjust duration and timing as needed */
+    font-size: 50px;
+    padding-top: 90px;
+    text-shadow: white -1px -1px;
+}
+
+
+
+.typing-text::after {
+    display: inline-block;
+    margin-left: 2px; /* Adjust the distance between text and cursor */
+}
+.title{
+    text-align: left;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.title{
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 35px;
+    color:white;
+    text-shadow: -1px -1px black;
+    font-weight: 900;
+    opacity: 0;
+}
+
+.title.animate{
+    animation: fadeInWords 3s forwards;
+}
+@keyframes fadeInWords {
+    from {
+        opacity: 0.1;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.title.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+
+
+.title p{
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+#about{
+    display: none;
+    text-align: justify;
+    line-height: 25px;
+    color: white;
+    padding-left:  25px;
+    text-align: center;
+}
+.t{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+
+.t{
+    padding-bottom: 7px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color:black;
+    text-shadow: -1px -1px white ;
+}
+#about .t:hover{
+    color: black;
+    transform: scale(1.1);
+    
+}
+.title-1{
+    display: inline-block;
+}
+.title-1.animate{
+    animation: slideInFromTop 1s ease-out;
+}
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%); /* Move the element up by its own height */
+    }
+    to {
+        transform: translateY(0); /* Move the element back to its original position */
+    }
+}
+
+.title-1.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+
+#about{
+    padding: 20px;
+}
+.aboutcontent{
+    margin-top: 7px;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
+    transition: transform 0.5s ease;
+    opacity: 0;
+}
+.aboutcontent.animate{
+    animation: fadeInWords 3s forwards;
+}
+@keyframes fadeInWords {
+    from {
+        opacity: 0.1;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.aboutcontent.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+.aboutcontent:hover{
+    background: linear-gradient(to right, #91A6FF 25%, #FF88DC 50%, #91A6FF 25%, #FF88DC 50%);
+    color: #000;
+    transition: 0.5s ease;
+    transform: scale(1.03);
+}
+.aboutcontent p{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#internships{
+    text-align: justify;
+    line-height: 25px;
+    color: white;
+    padding:  25px;
+    text-align: center;
+}
+#internships h1 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+#internships h1:hover{
+    color: black;
+    transform: scale(1.1);
+}
+#internships h2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+#internships h2:hover{
+    color: black;
+    transform: scale(1.1);
+}
+.interncontent{
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
+    transition: transform 0.5s ease;
+    margin-bottom: 25px;
+}
+.interncontent:hover{
+    background: linear-gradient(to right, #91A6FF 25%, #FF88DC 50%, #91A6FF 25%, #FF88DC 50%);
+    color: #000;
+    transition: 0.5s ease;
+    transform: scale(1.03);
+}
+.interncontent p{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.internimages{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    opacity: 0;
+}
+.internimages.animate{
+    animation: fadeInWords 3s forwards;
+}
+@keyframes fadeInWords {
+    from {
+        opacity: 0.1;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.internimages.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+.internimg1{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.internimg{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.8s;
+}
+.mlcontent{
+    margin: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7),#FD5200);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    font-size: 15px;
+    transition: height 0.8s;
+    color: white;
+    font-weight: 700;
+}
+.internimg1:hover img{
+    transform: scale(1.1);
+}
+.internimg1:hover .mlcontent{
+    height: 100%;
+}
+.ext{
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    color: #FA003F;
+    background-color: white;
+}
+.ext:hover{
+    background-color: #FA003F;
+    color: white;
+}
+.pop{
+    font-weight: 900;
+    color: yellow;
+}
+.mlcontent .subh1{
+    font-weight: 900;
+    color: #FA003F;
+}
+#faqs{
+    padding: 20px;
+}
+#faqs{
+    text-align: justify;
+    line-height: 25px;
+    color: white;
+    padding-left:  25px;
+    text-align: center;
+}
+#faqs h1{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+#faqs h1:hover{
+    color: black;
+    transform: scale(1.1);
+}
+#faqs h2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+#faqs h2:hover{
+    color: black;
+    transform: scale(1.1);
+}
+
+.faqquestion{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 30px;
+    margin-top: 50px;
+    opacity: 0;
+}
+.faqquestion.animate{
+    animation: fadeInWords 3s forwards;
+}
+@keyframes fadeInWords {
+    from {
+        opacity: 0.1;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.faqquestion.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+.question{
+    background: linear-gradient(to right, #91A6FF 25%, #FF88DC 50%, #91A6FF 25%, #FF88DC 50%);
+    color: #000;
+    transition: 0.1s ease;
+    transform: scale(1.03);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.answer{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.1s ease;
+    display: none;
+    
+}
+
+.question:hover .answer{
+    display: contents;
+    color: #000;
+    transition: 0.1s ease;
+    transform: scale(1.03);
+}
+#contact{
+    text-align: justify;
+    line-height: 25px;
+    color: white;
+    padding:  25px;
+    text-align: center;
+}
+.contacttitle{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    transition: transform 0.5s ease;
+    text-shadow: -1px -1px white ;
+}
+.contacttitle:hover{
+    color: black;
+    transform: scale(1.1);
+}
+.contactdetial{
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
+    transition: transform 0.5s ease;
+    margin-bottom: 25px;
+    text-align: left;
+    padding-left: 100px;
+    opacity: 0;
+}
+.contactdetial.animate{
+    animation: fadeInWords 3s forwards;
+}
+@keyframes fadeInWords {
+    from {
+        opacity: 0.1;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.contactdetial.animate span:nth-child(1){
+    animation-delay: 6s; 
+}
+.contactdetial .cd{
+    padding-bottom: 20px;
+}
+.cd a{
+    font-size: 20px;
+    color: white;
+    font-weight: normal;
+}
+.cd i{
+    font-size: 30px;
+    margin-right: 40px;
+    color:black;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 10px;
+    align-items: center;
+}
+
+.cd:hover{
+    transform: translateX(10px);
+    transition: 0.5s;
+}
+
+
+.hidden{
+    display: none;
+}
+.all{
+    display: block;
+}
+
+.animation-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+}
+@keyframes jumpAnimation {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+    }
+    40%, 60% {
+        transform: translateY(-20px); 
+    }
+}
+.jumping-image {
+    width: 90px; 
+    height: auto;
+    animation: jumpAnimation 3s infinite; 
+}
+
